@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+    <LinearLayout
+        android:paddingBottom="@dimen/dp_18"
+        android:layout_width="match_parent"
+        android:background="@drawable/pop_up_ellipse"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="是否删除全部搜索记录"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/unselected"
+            android:textStyle="bold"
+            android:gravity="center" />
+        <LinearLayout
+            android:gravity="center"
+            android:paddingRight="@dimen/dp_9"
+            android:paddingLeft="@dimen/dp_9"
+            android:layout_marginTop="@dimen/dp_38"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/cancel_pop"
+                android:layout_width="@dimen/dp_112"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pop_up_cancel"
+                android:paddingBottom="@dimen/dp_9"
+                android:paddingTop="@dimen/dp_9"
+                android:text="取消"
+                android:gravity="center"
+                android:textColor="@color/colorUnselected"
+                android:textSize="@dimen/sp_12"/>
+            <TextView
+                android:id="@+id/confirm_pop"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp_9"
+                android:paddingTop="@dimen/dp_9"
+                android:layout_width="@dimen/dp_112"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pop_up_confirm"
+                android:text="删除地址"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

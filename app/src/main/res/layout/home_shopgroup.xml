@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="@dimen/dp_80"
+    android:gravity="center"
+    android:background="@color/white"
+    android:layout_marginRight="@dimen/dp_10"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/img_shopgroup"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:background="@mipmap/home_shop_img"/>
+    <TextView
+        android:layout_marginTop="@dimen/dp_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_11"
+        android:textColor="#999999"
+        android:text="还差2人拼团"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4">
+        <TextView
+            android:id="@+id/price_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥"
+            android:textSize="@dimen/sp_10"
+            android:textColor="#DE1D13"
+            android:layout_alignBottom="@+id/price_shopgroup"
+            />
+        <TextView
+            android:layout_toRightOf="@+id/price_log"
+            android:id="@+id/price_shopgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="769"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_13"
+            android:textColor="#DE1D13"/>
+    </RelativeLayout>
+</LinearLayout>

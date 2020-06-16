@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/dp_15"
+    android:paddingTop="@dimen/dp_15"
+    android:layout_height="wrap_content">
+    <View
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:id="@+id/view_sideslip"
+        android:layout_width="@dimen/dp_2"
+        android:layout_height="@dimen/dp_12"
+        android:background="@color/colorSelect"/>
+    <TextView
+        android:id="@+id/title_sideslip"
+        android:textColor="@color/textGray"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_12"
+        android:text="食品"/>
+</RelativeLayout>

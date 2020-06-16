@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.stx.xhb.androidx.XBanner
+        android:layout_width="@dimen/dp_245"
+        android:layout_height="@dimen/dp_100"
+        android:id="@+id/xbnner_classify"
+        app:AutoPlayTime="3000"
+        android:background="@mipmap/home_banner"
+        app:pointNormal="@mipmap/home_banner_uncheck"
+        app:pointSelect="@mipmap/home_banner_select"
+        app:pointsPosition="CENTER"
+        app:isAutoPlay="true"
+        app:isShowIndicatorOnlyOne="false"></com.stx.xhb.androidx.XBanner>
+</RelativeLayout>

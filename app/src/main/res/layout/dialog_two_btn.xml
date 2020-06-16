@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/shape_circle_corner_white"
+    android:paddingRight="@dimen/dp_34"
+    android:paddingLeft="@dimen/dp_34"
+    android:paddingBottom="@dimen/dp_18"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_circle_corner_white">
+
+        <TextView
+            android:layout_marginTop="@dimen/dp_40"
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/unselected"
+            android:textSize="@dimen/sp_15"
+            android:maxLines="2" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_marginTop="@dimen/dp_38"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_message"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_logout_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:paddingBottom="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_8"
+                android:background="@drawable/pop_up_cancel"
+                android:textColor="@color/colorUnselected"
+                android:textSize="@dimen/sp_12" />
+            <TextView
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@drawable/get_ellipse"
+                android:id="@+id/tv_logout_confirm"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_8"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
