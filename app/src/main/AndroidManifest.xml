@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".activity.StoreDetailsActivity"></activity>
+        <activity android:name=".activity.AmendNicknameActivity"></activity>
+        <activity android:name=".activity.StoreDetailsActivity" />
         <activity android:name=".activity.AccountSetActivity" />
         <activity android:name=".activity.AmendpassDetailsActivity" />
         <activity android:name=".activity.AmendPasswordActivity" />
