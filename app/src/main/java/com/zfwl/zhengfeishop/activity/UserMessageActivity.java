@@ -16,7 +16,6 @@ public class UserMessageActivity extends Base2Activity {
     private LinearLayout returnLayout,headLayout,nicknameLayout,sexLayout,birthdayLayout;
     private ImageView headImg;
     private TextView nameText,nicknameText,sexText,birthdayText;
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
