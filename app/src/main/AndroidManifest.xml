@@ -14,8 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".activity.SignActivity"></activity>
-        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.StoreDetailsActivity"></activity>
+        <activity android:name=".activity.AccountSetActivity" />
+        <activity android:name=".activity.AmendpassDetailsActivity" />
+        <activity android:name=".activity.AmendPasswordActivity" />
+        <activity android:name=".activity.SignDetailsActivity" />
+        <activity android:name=".activity.SignActivity" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".activity.ContactActivity" />
         <activity android:name=".activity.MyMessagesActivity" />
         <activity android:name=".activity.StoreActivity" />

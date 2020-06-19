@@ -44,7 +44,6 @@
         android:layout_above="@id/butten"
         android:layout_marginBottom="@dimen/dp_10"></androidx.recyclerview.widget.RecyclerView>
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/butten"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"

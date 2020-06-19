@@ -1,8 +1,10 @@
 package com.zfwl.zhengfeishop.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -12,7 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zfwl.zhengfeishop.R;
+import com.zfwl.zhengfeishop.bean.ShoppingCarDataBean;
 import com.zfwl.zhengfeishop.utils.JDCityPicker;
+import com.zfwl.zhengfeishop.utils.RoundCornerDialog;
+
+import java.util.List;
 
 
 public class SiteMyActivity extends Base2Activity {
@@ -109,7 +115,7 @@ public class SiteMyActivity extends Base2Activity {
         deleteImgSite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SiteMyActivity.this, "删除", Toast.LENGTH_SHORT).show();
+                showDeleteDialog();
             }
         });
         //返回
@@ -126,4 +132,43 @@ public class SiteMyActivity extends Base2Activity {
         layoutParams.alpha = f;
         getWindow().setAttributes(layoutParams);
     }
+    //删除弹框
+    private void showDeleteDialog() {
+        View view = View.inflate(SiteMyActivity.this, R.layout.dialog_two_btn, null);
+        final RoundCornerDialog roundCornerDialog = new RoundCornerDialog(SiteMyActivity.this, 0, 0, view, R.style.RoundCornerDialog);
+        roundCornerDialog.show();
+        roundCornerDialog.setCanceledOnTouchOutside(true);// 设置点击屏幕Dialog不消失
+        roundCornerDialog.setOnKeyListener(keylistener);//设置点击返回键Dialog不消失
+
+        TextView tv_message = (TextView) view.findViewById(R.id.tv_message);
+        TextView tv_logout_confirm = (TextView) view.findViewById(R.id.tv_logout_confirm);
+        TextView tv_logout_cancel = (TextView) view.findViewById(R.id.tv_logout_cancel);
+        tv_message.setText("是否删除该地址？");
+
+        //确定
+        tv_logout_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roundCornerDialog.dismiss();
+                Toast.makeText(SiteMyActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+        //取消
+        tv_logout_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roundCornerDialog.dismiss();
+            }
+        });
+    }
+    DialogInterface.OnKeyListener keylistener = new DialogInterface.OnKeyListener() {
+        public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+            if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    };
 }

@@ -29,6 +29,7 @@ import com.zfwl.zhengfeishop.activity.IntegralShopActivity;
 import com.zfwl.zhengfeishop.activity.LeadTroopsActivity;
 import com.zfwl.zhengfeishop.activity.RankingListActivity;
 import com.zfwl.zhengfeishop.activity.SearchActivity;
+import com.zfwl.zhengfeishop.activity.StoreDetailsActivity;
 import com.zfwl.zhengfeishop.activity.ThisLocalityCostumeActivity;
 import com.zfwl.zhengfeishop.activity.ThisLocalityFreshActivity;
 import com.zfwl.zhengfeishop.activity.ThisSupermarketActivity;
@@ -47,7 +48,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener,V
 
     private AnimationNestedScrollView sv_view;
     private LinearLayout ll_search,recommendLayout,preferenceLayout,electricLayout,cateLayout,freshLayout,costumeLayout,supermarketLayout,
-            integralLayout,bookingLayout,rankingLayout,leadLayout,timeLimitLayout,timelimitMoreLayout,grouppurchaseMoreLayout,integralMoreLayout;
+            integralLayout,bookingLayout,rankingLayout,leadLayout,timeLimitLayout,timelimitMoreLayout,grouppurchaseMoreLayout,integralMoreLayout,
+            messageHome;
     private TextView tv_title,nameRecommend,titleRecommend,namePreference,titlePreference,nameElectric,titleElectric,nameCate,titleCate;
     private View viewRecommend,viewPreference,viewElectric,viewCate;
     private List<String>listBanner;
@@ -111,6 +113,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener,V
         timelimitMoreLayout=view.findViewById(R.id.timelimit_more_layout);
         grouppurchaseMoreLayout=view.findViewById(R.id.grouppurchase_more_layout);
         integralMoreLayout=view.findViewById(R.id.integral_more_layout);
+        messageHome=view.findViewById(R.id.message_home);
         pageRecommend.addOnPageChangeListener(this);
         preferenceLayout.setOnClickListener(this);
         electricLayout.setOnClickListener(this);
@@ -306,6 +309,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener,V
             @Override
             public void onClick(View view) {
                 getActivity().startActivity(new Intent(getActivity(), IntegralShopActivity.class));
+            }
+        });
+        //信息
+        messageHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().startActivity(new Intent(getActivity(), StoreDetailsActivity.class));
             }
         });
     }

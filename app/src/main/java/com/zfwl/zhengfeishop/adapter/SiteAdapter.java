@@ -13,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zfwl.zhengfeishop.R;
-import com.zfwl.zhengfeishop.activity.OrderFormDetailsActivity;
-import com.zfwl.zhengfeishop.activity.SiteActivity;
 import com.zfwl.zhengfeishop.activity.SiteMyActivity;
 import com.zfwl.zhengfeishop.bean.SiteEventBean;
 
@@ -27,10 +25,20 @@ import org.greenrobot.eventbus.EventBus;
 public class SiteAdapter extends RecyclerView.Adapter<SiteAdapter.ViewHolder>{
 
     private Context context;
+    private ItemOnClickInterface itemOnClickInterface;
 
 
     public SiteAdapter(Context context) {
         this.context = context;
+    }
+    //回调接口
+    public interface ItemOnClickInterface {
+        void onItemClick(View view, int position);
+    }
+
+    //定义回调方法
+    public void setItemOnClickInterface(ItemOnClickInterface itemOnClickInterface) {
+        this.itemOnClickInterface = itemOnClickInterface;
     }
 
     @NonNull
@@ -68,9 +76,8 @@ public class SiteAdapter extends RecyclerView.Adapter<SiteAdapter.ViewHolder>{
             @Override
             public void onClick(View view) {
                 EventBus.getDefault().post(new SiteEventBean(holder.nameSite.getText().toString(),holder.cellphoneSite.getText().toString(),holder.titleSite.getText().toString()));
-                if (SiteActivity.class.isInstance(context)){
-                    SiteActivity siteActivity=(SiteActivity) context;
-                    siteActivity.finish();
+                if (itemOnClickInterface!=null){
+                    itemOnClickInterface.onItemClick(view,position);
                 }
             }
         });

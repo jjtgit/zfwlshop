@@ -9,25 +9,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zfwl.zhengfeishop.R;
 import com.zfwl.zhengfeishop.adapter.SiteAdapter;
 
-public class SiteActivity extends Base2Activity {
+public class SiteActivity extends Base2Activity implements SiteAdapter.ItemOnClickInterface{
 
     private ImageView returnOfdetails;
     private RecyclerView rvSite;
     private TextView buttenSite;
     private SiteAdapter siteAdapter;
+    private int pds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_site);
+        pds = getIntent().getIntExtra("pd", 0);
         returnOfdetails=findViewById(R.id.return_ofdetails);
         rvSite=findViewById(R.id.rv_site);
         buttenSite=findViewById(R.id.butten_site);
         siteAdapter = new SiteAdapter(this);
+        siteAdapter.setItemOnClickInterface(this);
         init();
     }
 
@@ -54,5 +58,14 @@ public class SiteActivity extends Base2Activity {
     }
     public void Finshs(){
         finish();
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        if (pds==1){
+
+        }else {
+            finish();
+        }
     }
 }

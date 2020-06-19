@@ -10,4 +10,6 @@
     <color name="textGray">#666666</color>
     <color name="background">#f6f6f6</color>
     <color name="viewbackground">#DADADA</color>
+    <color name="buttenColor">#EAEAEA</color>
+    <color name="verificationCode">#05A8F1</color>
 </resources>

@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.zfwl.zhengfeishop.R;
+import com.zfwl.zhengfeishop.activity.AccountSetActivity;
 import com.zfwl.zhengfeishop.activity.CollectPostActivity;
 import com.zfwl.zhengfeishop.activity.ContactActivity;
 import com.zfwl.zhengfeishop.activity.CouponsActivity;
@@ -65,7 +66,7 @@ public class MyFragment extends BaseFragment{
         setImgmy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().startActivity(new Intent(getActivity(), SetMyActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), AccountSetActivity.class));
             }
         });
         //个人信息
@@ -168,7 +169,10 @@ public class MyFragment extends BaseFragment{
         siteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().startActivity(new Intent(getActivity(), SiteActivity.class));
+                Intent intent = new Intent();
+                intent.putExtra("pd",1);
+                intent.setClass(getActivity(), SiteActivity.class);
+                startActivity(intent);
             }
         });
         //登入
